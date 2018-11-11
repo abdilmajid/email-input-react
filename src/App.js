@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import EmailInput from './components/email_inputs';
+import PasswordInput from './components/password-inputs';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: '',
+      password: ''
+    }
+
+  }
+
+  handleChange = (event, attr) => {
+    const newState = {...this.state};
+    newState[attr] = event.target.value
+    this.setState(newState)
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <EmailInput
+            value={this.state.email}
+            handleChange={(e) => this.handleChange(e, 'email')}
+            placeholder='Your Email Address'
+        />
+        <PasswordInput
+            value={this.state.password}
+            handleChange={(e) => this.handleChange(e, 'password')}
+            placeholder='Secure password'
+        />
       </div>
     );
   }

@@ -1,0 +1,14 @@
+.__email-input {
+  display: block;
+  border: 1px solid #bbb;
+  color: #aaa;
+  outline: 0;
+  padding: 6px;
+  font-size: 1.1em;
+  min-width: 200px;
+  border-radius: 4px; 
+  background: url('https://img.icons8.com/metro/52/000000/secured-letter.png') no-repeat 10px 5px;
+  background-size: 16px 16px; 
+  padding-left: 32px;
+  margin: 10px;
+}
